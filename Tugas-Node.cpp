@@ -87,6 +87,7 @@ void hapusdepan(){
 	
 }else cout<<"nilai kosong\n";
 }
+
 //4.hapus node belakang
 void hapusbelakang(){
 	Sllc *hapus,*bantu;
@@ -109,6 +110,58 @@ void hapusbelakang(){
 	}else cout<<"nilai kosong\n";
 	
 }
+//5. tambah tengah
+void tambahtengah(int letak, int nilai){
+	if(isEmpty()==0){
+		Sllc *bantu1 = new Sllc;
+		Sllc *bantu2= new Sllc;
+		Sllc *baru = new Sllc;
+		bantu1 = head;
+		for(int i=1;i<letak;i++){
+			bantu2 = bantu1;
+			bantu1 = bantu1->next;
+		}
+		baru->nilai = nilai;
+		bantu2->next = baru;
+		baru->next = bantu1;
+		
+	}	
+}
+//6. hapus tengah
+void hapustengah(int nilai){
+    if(isEmpty()==0){
+        Sllc *bantu1 = new Sllc;
+        Sllc *bantu2 = new Sllc;
+        bantu1 = head;
+        int i = 1;
+        for(bantu1=head;bantu1->nilai!=nilai;bantu1=bantu1->next){
+            i++;
+        }
+        bantu2 = head;
+        for(int j=1;j<i;j++){
+            bantu2 = bantu2->next;
+        }
+        bantu2->next = bantu1->next;
+        delete bantu1;
+        cout << "Hapus Berhasil";
+    }else
+        cout << "Kosong";
+}
+void cetaknilai(){
+	Sllc *b;
+	b=head;
+	if(isEmpty()==0){
+		do{
+		cout<<b->nilai<<endl;
+		b=b->next;}
+		while (b!=head); 
+			cout<<endl;}
+					
+	else cout<<"masih kosong\n";
+	
+}
+	void tanya(){
+	
 
 int main ()
 {
