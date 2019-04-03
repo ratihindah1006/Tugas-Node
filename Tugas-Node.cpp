@@ -16,8 +16,53 @@ void init(){
 	head=NULL;
 }
 int isEmpty(){
-	if(head==NULL) return 1;
-	else return 0;
+	if(head==NULL) 
+		return 1;
+	else 
+		return 0;
+}
+//1. Menambahkan node di depan
+void tambahdepan(int nilaibaru){
+	Sllc *baru,*bantu;
+	baru= new Sllc;
+	
+	baru->nilai=nilaibaru;
+	baru->next=baru;
+	
+	if(isEmpty()==1){
+		head=baru;
+		head->next=head;
+	}else{
+		bantu=head;
+		while(bantu->next!=head){
+			bantu=bantu->next;
+		}
+		baru->next=head;
+		head=baru;
+		bantu->next=head;
+	}
+}
+//2. Menambahkan node di belakang
+void tambahbelakang(int nilaibaru){
+	Sllc *baru,*bantu;
+	baru= new Sllc;
+	baru->nilai=nilaibaru;
+	
+//	cout<<"masukkan nilai ";
+//	cin>>nilaibaru;
+	baru->next=baru;
+	
+	if(isEmpty()==1){
+		head=baru;
+		head->next=head;
+	}else{
+		bantu=head;
+		while(bantu->next!=head){
+			bantu=bantu->next;
+		}
+		bantu->next=baru;
+		baru->next=head;
+	} 
 }
 
 //3.hapus node depan
