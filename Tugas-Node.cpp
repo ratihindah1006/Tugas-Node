@@ -161,9 +161,64 @@ void cetaknilai(){
 	
 }
 	void tanya(){
+	int pilihan,nilaibaru;
+	cout<<"**********************************************\n";
+	cout<<" \t\tsilahkan pilih?\n";
+	cout<<"**********************************************\n";
+	cout<<"1.tambah nilai di depan\n";
+	cout<<"2.belakang\n";
+	cout<<"3.hapus dpan\n";
+	cout<<"4.hapus belakang\n";
+	cout<<"5.tambah tengah\n";
+	cout<<"6.hapus tengah\n";
+	cout<<"masukkan pilihan anda \n";
+	cin>>pilihan;
+	switch(pilihan){
+		case 1:
+			cout<<"masukkan nilai ";
+			cin>>nilaibaru;
+			tambahdepan( nilaibaru);
+			cetaknilai();
+			break;
+		case 2:
+			cout<<"masukkan nilai ";
+			cin>>nilaibaru;
+			tambahbelakang( nilaibaru);
+			cetaknilai();
+			break;
+		case 3:
+			hapusdepan();
+			cetaknilai();
+			break;
+		case 4:
+			hapusbelakang();
+			cetaknilai();
+			break;
+		case 5:
+			cout<<"masukkan nilai ";
+			cin>>nilaibaru;
+			tambahtengah(1,3);
+			cetaknilai();
+			break;
+		default:
+			cout<<"kode salah\n";
+			system("pause");
+			system("cls");
+	}}
 	
 
 int main ()
 {
-
+	char lagi='y';
+	tanya();
+	cout<<"mau edit lagi [y jika ya]?\n";
+	cin>>lagi;
+	system("cls");
+	while (lagi=='y'){
+		tanya();
+	
+	}
+	system("cls");
+;
+	return 0;
 }
